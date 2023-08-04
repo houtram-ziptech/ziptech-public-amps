@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="382675d1-194e-4597-a638-a01b758da58f" Name="Enable Windows 11 Upgrades" Description="RW5hYmxlV2luZG93cyAxMSBVcGdyYWRlcyBieSBzZXR0aWduIFRhcmdldGVkIFJlbGVhc2UgdmVyc2lvbiB0byBXaW5kb3dzIDEwIDIySDIgYW5kIENsZWFyaW5nIFByb3BlcnR5IFZhbHVlcy4=" Version="2.19.0.1" MinRequiredVersion="2.19.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{57812aee-987c-4512-b627-4a0688ee14f0}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1559,4079</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1559,4079" MinRequiredVersion="2.19.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RegistryKeyExists BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" Conditional="[RegistryKeyExists_Conditional]" DisplayName="Registry Key Exists (WindowsUpdate)" sap:VirtualizedContainerService.HintSize="1523,124" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="106a8dcd-ff69-4d00-be91-b3e42a9481b0" Result="[RegistryKeyExists_Result]" ResultString="[RegistryKeyExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryKeyExists" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1523,3692" MinRequiredVersion="2.19.0.1" Moniker="9213269a-0aa1-4ade-b7ce-098f7df1836e" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="False" Value_Type="x:String" Variable="[RegistryKeyExists_Conditional]" Variable_DisplayArg="Registry Key Exists (WindowsUpdate).Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="1041,3455" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:Log Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="1003,88" LogMessage="[Log_LogMessage_5]" Message="WindowsUpdate Registry Key does exist..." Message_DisplayArg="WindowsUpdate Registry Key does exist..." Message_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="4c902c28-39e1-4ebd-971c-e2b9ec2da082" Result="[Log_Result_5]" ResultString="[Log_ResultString_5]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                <p:Log Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="1003,88" LogMessage="[Log_LogMessage_6]" Message="Setting Property Values..." Message_DisplayArg="Setting Property Values..." Message_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="0a863424-5e57-4bd6-b34b-ea54981f45cf" Result="[Log_Result_6]" ResultString="[Log_ResultString_6]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                <p:RegistryValueExists BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" Conditional="[RegistryValueExists_Conditional]" DisplayName="Registry Value Exists (TargetReleaseversion)" sap:VirtualizedContainerService.HintSize="1003,160" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="5ee0a8b1-afed-4f1c-90e5-1900e79c3616" Property="TargetReleaseversion" Property_DisplayArg="TargetReleaseversion" Property_Item="{x:Null}" Result="[RegistryValueExists_Result]" ResultString="[RegistryValueExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+                <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1003,747" MinRequiredVersion="2.19.0.1" Moniker="dc056d19-d63e-468e-945e-cdd8a8a79f93" Result="[IfElse_Result_1]" ResultString="[IfElse_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="False" Value_Type="x:String" Variable="[RegistryValueExists_Conditional]" Variable_DisplayArg="Registry Value Exists (TargetReleaseversion).Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="535,510" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:SetRegistryValue BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" DisplayName="Set Registry Value (TargetReleaseVersion)" sap:VirtualizedContainerService.HintSize="497,232" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.18.0.1" Moniker="45c64814-04b9-4524-b59f-1a1472075fbf" PropertyName="TargetReleaseVersion" PropertyName_DisplayArg="TargetReleaseVersion" PropertyName_Item="{x:Null}" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyType_Item="{x:Null}" PropertyValue="0" PropertyValue_DisplayArg="0" Result="[SetRegistryValue_Result]" ResultString="[SetRegistryValue_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+                        <p:Log Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="497,88" LogMessage="[Log_LogMessage_9]" Message="[SetRegistryValue_ResultString]" Message_DisplayArg="Set Registry Value (TargetReleaseVersion).Result String" Message_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="31fb1eac-1b1f-471c-8c01-d94222e67522" Result="[Log_Result_9]" ResultString="[Log_ResultString_9]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result" />
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_9" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_9" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_9" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="424,238" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="386,88" LogMessage="[Log_LogMessage_7]" Message="TargetReleaseVersion Value does not exist" Message_DisplayArg="TargetReleaseVersion Value does not exist" MinRequiredVersion="2.10.0.19" Moniker="73956215-581c-430e-8d81-e3d88c5d013a" Result="[Log_Result_7]" ResultString="[Log_ResultString_7]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_7" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_7" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_7" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+                <p:RegistryValueExists BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" Conditional="[RegistryValueExists_Conditional_1]" DisplayName="Registry Value Exists (ProductVersion)" sap:VirtualizedContainerService.HintSize="1003,160" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="455caf27-2df5-47fd-95bf-0e7a4e9d3fd5" Property="ProductVersion" Property_DisplayArg="ProductVersion" Property_Item="{x:Null}" Result="[RegistryValueExists_Result_1]" ResultString="[RegistryValueExists_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+                <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1003,675" MinRequiredVersion="2.19.0.1" Moniker="4035fda3-36e9-4417-b146-c3f72ec3f673" Result="[IfElse_Result_2]" ResultString="[IfElse_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="False" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_1]" Variable_DisplayArg="Registry Value Exists (ProductVersion).Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="535,438" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:ClearRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Clear Registry Value (ProductVersion)" sap:VirtualizedContainerService.HintSize="497,160" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" MinRequiredVersion="2.17.0.1" Moniker="8613bcdd-288b-43d7-bff4-b7625aa1e5f8" Property="ProductVersion" Property_DisplayArg="ProductVersion" Result="[ClearRegistryValue_Result]" ResultString="[ClearRegistryValue_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="ClearRegistryValue" m_bTextLinkChange="False" />
+                        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="497,88" LogMessage="[Log_LogMessage_10]" Message="[ClearRegistryValue_ResultString]" Message_DisplayArg="Clear Registry Value (ProductVersion).Result String" MinRequiredVersion="2.10.0.19" Moniker="2e0002ec-cbfa-4854-ac74-e9a89f9a5f1b" Result="[Log_Result_10]" ResultString="[Log_ResultString_10]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_10" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_10" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_10" />
+                        <Variable x:TypeArguments="x:String" Name="ClearRegistryValue_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="ClearRegistryValue_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="397,238" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="359,88" LogMessage="[Log_LogMessage_8]" Message="ProductVersion Value does not exist" Message_DisplayArg="ProductVersion Value does not exist" MinRequiredVersion="2.10.0.19" Moniker="6ff74b44-ace0-4bba-a59b-045e0d8b72a9" Result="[Log_Result_8]" ResultString="[Log_ResultString_8]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_8" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_8" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_8" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+                <p:RegistryValueExists BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" Conditional="[RegistryValueExists_Conditional_2]" DisplayName="Registry Value Exists (TargetReleaseVersionInfo)" sap:VirtualizedContainerService.HintSize="1003,160" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="81a87891-0464-4a0b-ab1f-39da05ddeaf0" Property="TargetReleaseVersionInfo" Property_DisplayArg="TargetReleaseVersionInfo" Property_Item="{x:Null}" Result="[RegistryValueExists_Result_2]" ResultString="[RegistryValueExists_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+                <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1003,947" MinRequiredVersion="2.19.0.1" Moniker="26f82144-dca3-4c48-924a-743e2fb97d44" Result="[IfElse_Result_3]" ResultString="[IfElse_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="False" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_2]" Variable_DisplayArg="Registry Value Exists (TargetReleaseVersionInfo).Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="535,710" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:SetRegistryValue BaseKey_ItemProp="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" BaseKey_Item="{x:Null}" DisplayName="Set Registry Value (TargetReleaseVersionInfo)" sap:VirtualizedContainerService.HintSize="497,232" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_Item="{x:Null}" MinRequiredVersion="2.18.0.1" Moniker="d874a1ac-f7ad-40b0-97ca-2d6f9c49ab86" PropertyName="TargetReleaseVersionInfo" PropertyName_DisplayArg="TargetReleaseVersionInfo" PropertyName_Item="{x:Null}" PropertyType="String" PropertyType_DisplayArg="String" PropertyType_Item="{x:Null}" PropertyValue="22H2" PropertyValue_DisplayArg="22H2" PropertyValue_Item="{x:Null}" Result="[SetRegistryValue_Result_2]" ResultString="[SetRegistryValue_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+                        <p:ClearRegistryValue BaseKey="{x:Null}" BaseKey_DisplayArg="{x:Null}" BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Clear Registry Value (TargetReleaseVersionInfo)" sap:VirtualizedContainerService.HintSize="497,160" Key="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" MinRequiredVersion="2.17.0.1" Moniker="d0e25df4-7ee1-4719-93dd-6939bb9a0122" Property="TargetReleaseVersionInfo" Property_DisplayArg="TargetReleaseVersionInfo" Result="[ClearRegistryValue_Result_1]" ResultString="[ClearRegistryValue_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="ClearRegistryValue" m_bTextLinkChange="False" />
+                        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="497,88" LogMessage="[Log_LogMessage_12]" Message="[ClearRegistryValue_ResultString_1]" Message_DisplayArg="Clear Registry Value (TargetReleaseVersionInfo).Result String" MinRequiredVersion="2.10.0.19" Moniker="23f4ac08-93f3-4c36-93b8-c20872d43b54" Result="[Log_Result_12]" ResultString="[Log_ResultString_12]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString_2" />
+                        <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_2" />
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_12" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_12" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_12" />
+                        <Variable x:TypeArguments="x:String" Name="ClearRegistryValue_ResultString_1" />
+                        <Variable x:TypeArguments="x:Double" Name="ClearRegistryValue_Result_1" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="411,238" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:Log Message_Item="{x:Null}" Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="373,88" LogMessage="[Log_LogMessage_11]" Message="TargetReleaseVersionInfo does not exist" Message_DisplayArg="TargetReleaseVersionInfo does not exist" MinRequiredVersion="2.10.0.19" Moniker="76a90d1a-74f4-41ad-91a5-94c55257e8cb" Result="[Log_Result_11]" ResultString="[Log_ResultString_11]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Log_LogMessage_11" />
+                        <Variable x:TypeArguments="x:Double" Name="Log_Result_11" />
+                        <Variable x:TypeArguments="x:String" Name="Log_ResultString_11" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_1" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_2" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_2" />
+                <Variable x:TypeArguments="x:String" Name="Log_LogMessage_5" />
+                <Variable x:TypeArguments="x:Double" Name="Log_Result_5" />
+                <Variable x:TypeArguments="x:String" Name="Log_ResultString_5" />
+                <Variable x:TypeArguments="x:String" Name="Log_LogMessage_6" />
+                <Variable x:TypeArguments="x:Double" Name="Log_Result_6" />
+                <Variable x:TypeArguments="x:String" Name="Log_ResultString_6" />
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result_2" />
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result_3" />
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_3" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="438,238" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:Log Message_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Log" sap:VirtualizedContainerService.HintSize="400,88" LogMessage="[Log_LogMessage]" Message="WindowsUpdate Registry Key does not exist..." Message_DisplayArg="WindowsUpdate Registry Key does not exist..." Message_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="163d1aa7-644b-4958-9b73-83623b50e105" Result="[Log_Result]" ResultString="[Log_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Log" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="Log_LogMessage" />
+                <Variable x:TypeArguments="x:Double" Name="Log_Result" />
+                <Variable x:TypeArguments="x:String" Name="Log_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="RegistryKeyExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryKeyExists_Result" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
